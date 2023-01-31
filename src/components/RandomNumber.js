@@ -1,15 +1,22 @@
 import { useState } from 'react'
-import generateRandomNum from '../utils/generateRandomNum'
 
 function RandomNumber({ maxNum }) {
   const [randomNum, setRandomNum] = useState(generateRandomNum(maxNum))
-  const changeRandomNum = () => {
-    setRandomNum(generateRandomNum(maxNum))
+
+  function generateRandomNum(maxNumber) {
+    return Math.floor(Math.random() * maxNumber)
   }
+
+  function setGenerateNum(maxNumber) {
+    setRandomNum(generateRandomNum(maxNumber))
+  }
+
   return (
     <div>
       <h1>{randomNum}</h1>
-      <button onClick={changeRandomNum}>Generate new random number</button>
+      <button onClick={() => setGenerateNum(maxNum)}>
+        Generate new random number
+      </button>
     </div>
   )
 }

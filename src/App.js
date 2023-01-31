@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import Button from './components/Button'
 import Counter from './components/Counter'
-import PetInfo from './components/PetInfo'
+import Persons from './components/Persons'
 import RandomNumber from './components/RandomNumber'
+
+const texts = ['Click', 'Hit', 'Press']
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,15 +14,9 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <PetInfo animal="cat" age="3" />
-        <PetInfo animal="dog" age="4" hasPet={false} />
-      </div>
+      <Persons />
       <RandomNumber maxNum={50} />
-      <Counter count={count} />
-      <Button onClick={incrementCount} />
-      <Button onClick={incrementCount} />
-      <Button onClick={incrementCount} />
+      <Counter count={count} onClick={incrementCount} texts={texts} />
     </div>
   )
 }
