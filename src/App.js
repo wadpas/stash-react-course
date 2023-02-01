@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Counter from './components/Counter'
+import Login from './components/Login'
 import Persons from './components/Persons'
 import RandomNumber from './components/RandomNumber'
 
@@ -12,11 +13,21 @@ function App() {
     setCount(count + 1)
   }
 
+  const resetCount = () => {
+    setCount(0)
+  }
+
   return (
     <div className="App">
+      <Login />
       <Persons />
       <RandomNumber maxNum={50} />
-      <Counter count={count} onClick={incrementCount} texts={texts} />
+      <Counter
+        count={count}
+        incrementCount={incrementCount}
+        resetCount={resetCount}
+        texts={texts}
+      />
     </div>
   )
 }
