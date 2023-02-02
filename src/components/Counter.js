@@ -1,10 +1,17 @@
+import './Counter.css'
+import styles from './Counter.module.css'
+
 function Counter({ count, incrementCount, resetCount, texts }) {
   return (
-    <div>
+    <div className={styles.counter}>
       <h1>Total clicks: {count}</h1>
       {texts.map((text) => {
         return (
-          <button onClick={incrementCount} key={text}>
+          <button
+            className="counter-button"
+            onClick={incrementCount}
+            key={text}
+          >
             {text} me
           </button>
         )
