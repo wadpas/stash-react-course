@@ -3,7 +3,7 @@ import './App.css'
 import Counter from './components/Counter'
 import Login from './components/Login'
 import Persons from './components/Persons'
-import Placeholder from './components/Placeholder'
+import Posts from './components/Posts'
 import RandomNumber from './components/RandomNumber'
 
 const texts = ['Click', 'Hit', 'Press']
@@ -22,7 +22,6 @@ function App() {
     <div className="App">
       <Login />
       <Persons />
-      <Placeholder />
       <RandomNumber maxNum={50} />
       <Counter
         count={count}
@@ -30,6 +29,7 @@ function App() {
         resetCount={resetCount}
         texts={texts}
       />
+      <Posts />
     </div>
   )
 }
